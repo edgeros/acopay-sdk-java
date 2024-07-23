@@ -46,6 +46,8 @@ public class AcopaySignUtil {
         }
         // 过滤空值
         filterEntries(signMap);
+        //过滤不参与签名的参数
+        filterNotSignEntries(signMap);
         // 进行排序
         TreeMap<String, Object> sortedMap = new TreeMap<>();
         sortedMap.putAll(signMap);
@@ -168,6 +170,18 @@ public class AcopaySignUtil {
                     iterator.remove();
                 }
             }
+        }
+    }
+
+    /**
+     * 过滤不参与签名的参数
+     *
+     * @param signParamMap 参数集合
+     */
+    private static void filterNotSignEntries(Map<String, Object> signParamMap) {
+        if (signParamMap != null && !signParamMap.isEmpty()) {
+            signParamMap.remove("aco_pay_sdk");
+            signParamMap.remove("version");
         }
     }
 }

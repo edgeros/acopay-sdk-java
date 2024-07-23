@@ -62,6 +62,13 @@ public class AcopayRefundQueryResponseModel extends AcopayCommonResponse {
     @JsonProperty(value = "success_time")
     private String successTime;
 
+    /**
+    * 退款渠道
+    * @since  2024/7/9 15:53
+    */
+    @JsonProperty(value = "refund_channel")
+    private String refundChannel;
+
 
     public String getMchTradeNo() {
         return mchTradeNo;
@@ -135,6 +142,14 @@ public class AcopayRefundQueryResponseModel extends AcopayCommonResponse {
         this.successTime = successTime;
     }
 
+    public String getRefundChannel() {
+        return refundChannel;
+    }
+
+    public void setRefundChannel(String refundChannel) {
+        this.refundChannel = refundChannel;
+    }
+
     @Override
     public String toString() {
         return "AcopayRefundQueryResponseModel{" +
@@ -148,6 +163,7 @@ public class AcopayRefundQueryResponseModel extends AcopayCommonResponse {
                 ", description='" + description + '\'' +
                 ", refundReason='" + refundReason + '\'' +
                 ", successTime='" + successTime + '\'' +
+                ", refundChannel='" + refundChannel + '\'' +
                 "}";
     }
 }
