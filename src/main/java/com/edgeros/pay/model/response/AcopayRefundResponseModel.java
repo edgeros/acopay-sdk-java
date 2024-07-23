@@ -51,6 +51,9 @@ public class AcopayRefundResponseModel extends AcopayCommonResponse {
      */
     private String description;
 
+    @JsonProperty(value = "refund_channel")
+    private String refundChannel;
+
     /**
      * 业务状态代码
      */
@@ -120,6 +123,14 @@ public class AcopayRefundResponseModel extends AcopayCommonResponse {
         this.code = code;
     }
 
+    public String getRefundChannel() {
+        return refundChannel;
+    }
+
+    public void setRefundChannel(String refundChannel) {
+        this.refundChannel = refundChannel;
+    }
+
     @Override
     public String toString() {
         return "AcopayRefundResponseModel{" +
@@ -132,6 +143,7 @@ public class AcopayRefundResponseModel extends AcopayCommonResponse {
                 ", refundAmount='" + refundAmount + '\'' +
                 ", description='" + description + '\'' +
                 ", code='" + code + '\'' +
+                ", refundChannel='" + refundChannel + '\'' +
                 "}";
     }
 }

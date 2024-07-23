@@ -1,5 +1,7 @@
 package com.edgeros.pay.model;
 
+import com.edgeros.pay.constant.AcopayConstant;
+
 import java.io.Serializable;
 
 /**
@@ -60,7 +62,16 @@ public class AcopayTradeAppModel implements Serializable {
      */
     private String timeExpire;
 
+    /**
+     * java sdk版本号
+     */
+    private String acoPaySdk = AcopayConstant.ACO_PAY_SDK_VERSION;
 
+    /**
+    * 调用接口版本号
+    * @since  2024/7/11 10:44
+    */
+    private String version = AcopayConstant.VERSION;
 
     public String getAmountCurrency() {
         return amountCurrency;
@@ -158,6 +169,14 @@ public class AcopayTradeAppModel implements Serializable {
         this.timeExpire = timeExpire;
     }
 
+    public String getAcoPaySdk() {
+        return acoPaySdk;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
     @Override
     public String toString() {
         return "AcopayTradeAppModel{" +
@@ -173,6 +192,8 @@ public class AcopayTradeAppModel implements Serializable {
                 ", sign='" + sign + '\'' +
                 ", signType='" + signType + '\'' +
                 ", timeExpire='" + timeExpire + '\'' +
+                ", acoPaySdk='" + acoPaySdk + '\'' +
+                ", version='" + version + '\'' +
                 '}';
     }
 }
