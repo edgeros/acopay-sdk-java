@@ -52,6 +52,20 @@ public class AcopayTradeQueryResponseModel extends AcopayCommonResponse {
     @JsonProperty(value = "amount_total")
     private String amountTotal;
 
+    /**
+    * 支付渠道
+    * @since  2024/7/9 15:55
+    */
+    @JsonProperty(value = "pay_channel")
+    private String payChannel;
+
+    /**
+    * 支付方式
+    * @since  2024/7/9 15:55
+    */
+    @JsonProperty(value = "pay_method")
+    private String payMethod;
+
     public String getAppNo() {
         return appNo;
     }
@@ -124,6 +138,22 @@ public class AcopayTradeQueryResponseModel extends AcopayCommonResponse {
         this.amountTotal = amountTotal;
     }
 
+    public String getPayChannel() {
+        return payChannel;
+    }
+
+    public void setPayChannel(String payChannel) {
+        this.payChannel = payChannel;
+    }
+
+    public String getPayMethod() {
+        return payMethod;
+    }
+
+    public void setPayMethod(String payMethod) {
+        this.payMethod = payMethod;
+    }
+
     @Override
     public String toString() {
         return "AcopayTradeQueryResponseModel{" +
@@ -137,6 +167,8 @@ public class AcopayTradeQueryResponseModel extends AcopayCommonResponse {
                 ", successTime='" + successTime + '\'' +
                 ", acoid='" + acoid + '\'' +
                 ", amountTotal='" + amountTotal + '\'' +
+                ", payChannel='" + payChannel + '\'' +
+                ", payMethod='" + payMethod + '\'' +
                 "}";
     }
 }
